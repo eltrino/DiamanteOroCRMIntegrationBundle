@@ -1,0 +1,49 @@
+{
+  "name": "diamante/orocrm-integration-bundle",
+  "description": "DiamanteDesk OroCRM Integration Bundle",
+  "homepage": "https://github.com/eltrino/OroCRMIntegrationBundle",
+  "license": "OSL-3.0",
+  "authors": [
+    {
+      "name": "Eltrino LLC",
+      "homepage": "http://eltrino.com"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "Diamante\\OroCRMIntegrationBundle": "."
+    }
+  },
+  "target-dir": "Diamante/OroCRMIntegrationBundle",
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/eltrino/OroCRMIntegrationBundle.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/orocrm/composer.git"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.4",
+    "oro/platform": "1.7.*",
+    "oro/crm": "1.7.*",
+    "diamante/desk-bundle": "dev-master",
+    "diamante/user-bundle": "dev-master",
+    "diamante/api-bundle": "dev-master",
+    "diamante/front-bundle": "dev-master",
+    "diamante/embeddedform-bundle": "dev-master",
+    "diamante/email-processing-bundle": "dev-master"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  },
+  "replace": {
+    "diamante/distribution-bundle":"1.*"
+  }
+}
