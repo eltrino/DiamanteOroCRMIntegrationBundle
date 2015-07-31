@@ -27,8 +27,8 @@
   ],
   "require": {
     "php": ">=5.4.4",
-    "oro/platform": "1.7.*",
-    "oro/crm": "1.7.*",
+    "oro/platform": "1.x-dev",
+    "oro/crm": "1.x-dev",
     "diamante/desk-bundle": "dev-master",
     "diamante/user-bundle": "dev-master",
     "diamante/api-bundle": "dev-master",
@@ -40,7 +40,7 @@
   "prefer-stable": true,
   "extra": {
     "branch-alias": {
-      "dev-master": "1.0.x-dev"
+      "dev-master": "1.1.x-dev"
     }
   },
   "replace": {
