@@ -15,11 +15,12 @@ composer require diamante/orocrm-integration-bundle:dev-master
 For correct installation you'll have to manually run following commands _(this list is a subject to change upon further development)_: 
 
 ```bash
-app/console diamante:desk:install
-app/console diamante:user:install
-app/console diamante:front:build --with-assets-dependencies
-app/console assets:install
-app/console assetic:dump
+php app/console diamante:desk:install
+php app/console diamante:user:install
+php app/console diamante:front:build --with-assets-dependencies
+php app/console diamante:embeddedform:install
+php app/console assets:install
+php app/console assetic:dump
 ```
 
 Further installation steps:
