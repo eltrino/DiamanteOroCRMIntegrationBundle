@@ -1,0 +1,59 @@
+datagrid:
+    diamante-contact-ticket-grid:
+        source:
+            type: orm
+            query:
+                select:
+                    - CONCAT(branch.key, CONCAT('-', i.sequenceNumber)) as key
+                    - i.id
+                    - i.subject
+                    - i.status
+                    - i.updatedAt
+                from:
+                    - { table: DiamanteDeskBundle:Ticket, alias: i }
+                join:
+                    left:
+                        - { join: i.branch, alias: branch }
+
+        properties:
+            id: ~
+            view_link:
+                type:       url
+                route:      diamante_ticket_view
+                params:     [ key ]
+            update_link:
+                type:       url
+                route:      diamante_ticket_update
+                params:     [ key ]
+            delete_link:
+                type:       url
+                route:      diamante_ticket_delete
+                params:     [ key ]
+
+        columns:
+            key:
+                label:   diamante.desk.ticket.columns.key
+            subject:
+                label: diamante.desk.ticket.columns.subject
+                type: twig
+                frontend_type: html
+                template: DiamanteDeskBundle:Ticket:Datagrid/Property/subject.html.twig
+            status:
+                label:   diamante.desk.ticket.columns.status
+            createdAt:
+                label:   diamante.desk.ticket.columns.created
+                frontend_type: datetime
+
+        sorters:
+            columns:
+                key:
+                  data_name: key
+                  apply_callback: Diamante\DeskBundle\Datagrid\SortHelper::getKeySortingFunction
+                subject:
+                  data_name: i.subject
+                status:
+                  data_name: i.status
+                createdAt:
+                  data_name: i.createdAt
+            default:
+                updatedAt: DESC

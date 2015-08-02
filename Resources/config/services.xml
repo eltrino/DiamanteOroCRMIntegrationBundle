@@ -1,20 +1,22 @@
 <?xml version="1.0" ?>
 
 <container xmlns="http://symfony.com/schema/dic/services"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
     <parameters>
-        <parameter key="diamante_oro_crm_integration.example.class">Diamante\OroCRMIntegrationBundle\Example</parameter>
+        <parameter key="diamante.integration.datasource_result_after.class">Diamante\OroCRMIntegrationBundle\EventListener\Datagrid\OrmDatasourceResultAfter</parameter>
     </parameters>
 
     <services>
-        <service id="diamante_oro_crm_integration.example" class="%diamante_oro_crm_integration.example.class%">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <service id="diamante.integration.datasource_result_after"
+                 class="%diamante.integration.datasource_result_after.class%">
+            <argument type="service" id="doctrine"/>
+            <argument type="string">%orocrm_contact.entity.class%</argument>
+            <argument type="string">%diamante.ticket.entity.class%</argument>
+            <argument type="string">%diamante.user.entity.class%</argument>
+            <tag name="kernel.event_listener" event="oro_datagrid.orm_datasource.result.after" method="onResultAfter"/>
         </service>
     </services>
-    -->
+
 </container>
