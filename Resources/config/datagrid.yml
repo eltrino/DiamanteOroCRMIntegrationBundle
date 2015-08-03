@@ -57,3 +57,5 @@ datagrid:
                   data_name: i.createdAt
             default:
                 updatedAt: DESC
+    diamante-account-ticket-grid:
+        extends: diamante-contact-ticket-grid
