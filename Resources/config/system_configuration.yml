@@ -1,0 +1,22 @@
+oro_system_configuration:
+    fields:
+        diamante_oro_crm_integration.create_contact:
+            type: choice
+            data_type: boolean
+            options:
+                label: 'Create Conatct based on Diamante User'
+                choices:
+                    - No
+                    - Yes
+
+    tree:
+        system_configuration:
+            platform:
+                children:
+                    diamante_desk_setup:
+                        children:
+                            diamante_desk_channels:
+                                children:
+                                    diamantedesk_channels_front_group:
+                                        children:
+                                            - diamante_oro_crm_integration.create_contact
