@@ -25,8 +25,8 @@ class Configuration implements ConfigurationInterface
             $rootNode,
             array(
                 'create_contact' => array(
-                    'value' => '',
-                    'type' => 'scalar'
+                    'value' => false,
+                    'type' => 'bool'
                 )
             )
         );

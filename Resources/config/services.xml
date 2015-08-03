@@ -7,6 +7,7 @@
     <parameters>
         <parameter key="diamante.integration.datasource_result_after.contact.class">Diamante\OroCRMIntegrationBundle\EventListener\Datagrid\OrmDatasourceResultAfter\Contact</parameter>
         <parameter key="diamante.integration.datasource_result_after.account.class">Diamante\OroCRMIntegrationBundle\EventListener\Datagrid\OrmDatasourceResultAfter\Account</parameter>
+        <parameter key="diamante.integration.event_listener.on_flush.class">Diamante\OroCRMIntegrationBundle\EventListener\OnFlushListener</parameter>
     </parameters>
 
     <services>
@@ -26,6 +27,15 @@
             <argument type="string">%diamante.user.entity.class%</argument>
             <tag name="kernel.event_listener" event="oro_datagrid.orm_datasource.result.after" method="onResultAfter"/>
         </service>
+
+        <service id="diamante.integration.event_listener.on_flush" class="%diamante.integration.event_listener.on_flush.class%">
+            <argument type="service" id="service_container"/>
+            <argument type="service" id="orocrm_contact.email.owner.provider"/>
+            <argument type="string">%orocrm_contact.entity.class%</argument>
+            <argument type="string">%oro_user.entity.class%</argument>
+            <tag name="doctrine.event_subscriber" connection="default"/>
+        </service>
+
     </services>
 
 </container>
