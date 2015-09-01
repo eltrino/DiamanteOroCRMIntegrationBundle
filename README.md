@@ -17,7 +17,6 @@ For correct installation you'll have to manually run following commands _(this l
 ```bash
 php app/console diamante:desk:install
 php app/console diamante:user:install
-php app/console diamante:front:build --with-assets-dependencies
 php app/console diamante:embeddedform:install
 php app/console assets:install
 php app/console assetic:dump
