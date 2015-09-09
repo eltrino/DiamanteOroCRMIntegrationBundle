@@ -8,6 +8,8 @@
         <parameter key="diamante.integration.datasource_result_after.contact.class">Diamante\OroCRMIntegrationBundle\EventListener\Datagrid\OrmDatasourceResultAfter\Contact</parameter>
         <parameter key="diamante.integration.datasource_result_after.account.class">Diamante\OroCRMIntegrationBundle\EventListener\Datagrid\OrmDatasourceResultAfter\Account</parameter>
         <parameter key="diamante.integration.event_listener.on_flush.class">Diamante\OroCRMIntegrationBundle\EventListener\OnFlushListener</parameter>
+        <parameter key="diamante_integration_default_owner.type.class">Diamante\OroCRMIntegrationBundle\Form\Type\DefaultOwnerType</parameter>
+        <parameter key="diamante_integration_depended_choice.type.class">Diamante\OroCRMIntegrationBundle\Form\Type\DependedChoiceType</parameter>
     </parameters>
 
     <services>
@@ -34,6 +36,14 @@
             <argument type="string">%orocrm_contact.entity.class%</argument>
             <argument type="string">%oro_user.entity.class%</argument>
             <tag name="doctrine.event_subscriber" connection="default"/>
+        </service>
+
+        <service id="diamante_integration_default_owner" class="%diamante_integration_default_owner.type.class%">
+            <tag name="form.type" alias="diamante_integration_default_owner"/>
+        </service>
+
+        <service id="diamante_integration_depended_choice" class="%diamante_integration_depended_choice.type.class%">
+            <tag name="form.type" alias="dependent_choice_type"/>
         </service>
 
     </services>

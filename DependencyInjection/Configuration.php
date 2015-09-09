@@ -23,12 +23,16 @@ class Configuration implements ConfigurationInterface
 
         SettingsBuilder::append(
             $rootNode,
-            array(
-                'create_contact' => array(
+            [
+                'create_contact' => [
                     'value' => false,
-                    'type' => 'bool'
-                )
-            )
+                    'type'  => 'bool',
+                ],
+                'default_owner'  => [
+                    'value' => null,
+                    'type'  => 'string',
+                ],
+            ]
         );
 
         return $treeBuilder;

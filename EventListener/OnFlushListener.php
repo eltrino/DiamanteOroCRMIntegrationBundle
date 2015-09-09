@@ -29,7 +29,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class OnFlushListener implements EventSubscriber
 {
 
-    const DEFAULT_ORO_USER_ID = 1;
     const DEFAULT_ORGANIZATION_ID = 1;
 
     private static $processedEmails = [];
@@ -120,7 +119,6 @@ class OnFlushListener implements EventSubscriber
                         $email->setPrimary(true);
                         $contactEntity->addEmail($email);
 
-                        // TODO: should be created by DiamanteFrontUser
                         $defaultUser = $this->getDefaultUser();
                         $contactEntity->setCreatedBy($defaultUser);
                         $contactEntity->setOwner($defaultUser);
@@ -165,8 +163,9 @@ class OnFlushListener implements EventSubscriber
      */
     private function getDefaultUser()
     {
+        $defaultUser = $this->container->get('oro_config.global')->get('diamante_oro_crm_integration.default_owner');
         $userRepository = $this->container->get('doctrine')->getManager()->getRepository($this->oroUserEntityClassName);
-        return $userRepository->find(static::DEFAULT_ORO_USER_ID);
+        return $userRepository->find($defaultUser->getId());
     }
 
     /**

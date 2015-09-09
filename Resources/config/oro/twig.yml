@@ -1,0 +1,2 @@
+bundles:
+    - DiamanteOroCRMIntegrationBundle:Form:fields.html.twig

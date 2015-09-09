@@ -1,13 +1,20 @@
 oro_system_configuration:
     fields:
         diamante_oro_crm_integration.create_contact:
-            type: choice
+            type: dependent_choice_type
             data_type: boolean
             options:
                 label: 'Create Conatct based on Diamante User'
+                resettable: false
                 choices:
                     - No
                     - Yes
+        diamante_oro_crm_integration.default_owner:
+            data_type: string
+            type: diamante_integration_default_owner
+            options:
+                label: 'Default Owner'
+                resettable: false
 
     tree:
         system_configuration:
@@ -20,3 +27,4 @@ oro_system_configuration:
                                     diamantedesk_channels_front_group:
                                         children:
                                             - diamante_oro_crm_integration.create_contact
+                                            - diamante_oro_crm_integration.default_owner
