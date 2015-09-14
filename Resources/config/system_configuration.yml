@@ -4,7 +4,7 @@ oro_system_configuration:
             type: dependent_choice_type
             data_type: boolean
             options:
-                label: 'Create Conatct based on Diamante User'
+                label: 'Create Contact based on Diamante User'
                 resettable: false
                 choices:
                     - No
