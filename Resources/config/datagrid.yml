@@ -8,26 +8,30 @@ datagrid:
                     - i.id
                     - i.subject
                     - i.status
-                    - i.updatedAt
+                    - i.createdAt
                 from:
-                    - { table: DiamanteDeskBundle:Ticket, alias: i }
+                    - { table:  Diamante\UserBundle\Entity\DiamanteUser, alias: du }
                 join:
                     left:
                         - { join: i.branch, alias: branch }
+                        -
+                            join: Diamante\DeskBundle\Entity\Ticket
+                            alias: i
+                            conditionType: WITH
+                            condition: "CONCAT('diamante_', du.id) = i.reporter"
+                where:
+                    and:
+                      - du.email IN (:emails)
+                groupBy: i.id
+
+            bind_parameters:
+                - emails
 
         properties:
             id: ~
             view_link:
                 type:       url
                 route:      diamante_ticket_view
-                params:     [ key ]
-            update_link:
-                type:       url
-                route:      diamante_ticket_update
-                params:     [ key ]
-            delete_link:
-                type:       url
-                route:      diamante_ticket_delete
                 params:     [ key ]
 
         columns:
@@ -57,5 +61,35 @@ datagrid:
                   data_name: i.createdAt
             default:
                 updatedAt: DESC
+
+        filters:
+            columns:
+                key:
+                    type:      string
+                    data_name: key
+                subject:
+                    type:      string
+                    data_name: i.subject
+                status:
+                    type: choice
+                    data_name: i.status
+                    options:
+                        field_options:
+                            multiple: true
+                            choices:  @diamante.ticket.datagrid_status_helper->getTicketStatuses
+                createdAt:
+                    type:      datetime
+                    data_name: i.createdAt
+
+        actions:
+            view:
+                type:          navigate
+                label:         diamante.desk.ticket.actions.view
+                icon:          eye-open
+                link:          view_link
+                rowAction:     true
+                acl_resource:  VIEW;Entity:DiamanteDeskBundle:Ticket
+
+
     diamante-account-ticket-grid:
         extends: diamante-contact-ticket-grid

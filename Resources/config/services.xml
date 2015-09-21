@@ -13,23 +13,6 @@
     </parameters>
 
     <services>
-        <service id="diamante.integration.datasource_result_after.contact"
-                 class="%diamante.integration.datasource_result_after.contact.class%">
-            <argument type="service" id="doctrine"/>
-            <argument type="string">%orocrm_contact.entity.class%</argument>
-            <argument type="string">%diamante.ticket.entity.class%</argument>
-            <argument type="string">%diamante.user.entity.class%</argument>
-            <tag name="kernel.event_listener" event="oro_datagrid.orm_datasource.result.after" method="onResultAfter"/>
-        </service>
-        <service id="diamante.integration.datasource_result_after.account"
-                 class="%diamante.integration.datasource_result_after.account.class%">
-            <argument type="service" id="doctrine"/>
-            <argument type="string">%orocrm_account.account.entity.class%</argument>
-            <argument type="string">%diamante.ticket.entity.class%</argument>
-            <argument type="string">%diamante.user.entity.class%</argument>
-            <tag name="kernel.event_listener" event="oro_datagrid.orm_datasource.result.after" method="onResultAfter"/>
-        </service>
-
         <service id="diamante.integration.event_listener.on_flush" class="%diamante.integration.event_listener.on_flush.class%">
             <argument type="service" id="service_container"/>
             <argument type="service" id="orocrm_contact.email.owner.provider"/>
