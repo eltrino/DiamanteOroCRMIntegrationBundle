@@ -62,6 +62,12 @@ oro_menu_config:
             extras:
                 routes: ['diamante_report_*']
 
+        diamante_customer_management:
+              label: 'diamante.user.customer_management'
+              route: 'diamante_user_list'
+              extras:
+                position: 60
+
     tree:
         application_menu:
             children:
@@ -69,6 +75,7 @@ oro_menu_config:
                     children:
                         diamante_branch_list: ~
                         diamante_ticket_list: ~
+                        diamante_customer_management: ~
                         diamante_report_list:
                             children:
                                 diamante_report_tickets_by_priority: ~
@@ -91,3 +98,8 @@ oro_titles:
     diamante_ticket_create: 'Create Ticket'
     diamante_ticket_update: '%%ticket.subject%% - Edit'
     diamante_ticket_create_attach: 'Add Attachment'
+
+    diamante_user_create: 'Create user'
+    diamante_user_view:   '%%user.fullName%% - DiamanteDesk User'
+    diamante_user_update: '%%user.name%% - Update'
+    diamante_user_list:   'Customers Management'
