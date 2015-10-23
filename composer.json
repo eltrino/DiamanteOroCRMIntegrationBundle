@@ -27,13 +27,13 @@
   ],
   "require": {
     "php": ">=5.4.4",
-    "oro/crm": "1.7.*",
-    "diamante/desk-bundle": "dev-master",
-    "diamante/user-bundle": "dev-master",
-    "diamante/api-bundle": "dev-master",
-    "diamante/front-bundle": "dev-master",
-    "diamante/embeddedform-bundle": "dev-master",
-    "diamante/email-processing-bundle": "dev-master"
+    "oro/crm": "1.8.*",
+    "diamante/desk-bundle": "self.version",
+    "diamante/user-bundle": "self.version",
+    "diamante/api-bundle": "self.version",
+    "diamante/front-bundle": "self.version",
+    "diamante/embeddedform-bundle": "self.version",
+    "diamante/email-processing-bundle": "self.version"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
@@ -41,8 +41,5 @@
     "branch-alias": {
       "dev-master": "1.1.x-dev"
     }
-  },
-  "replace": {
-    "diamante/distribution-bundle":"1.*"
   }
 }
