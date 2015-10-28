@@ -1,27 +1,34 @@
-DiamanteDesk Integration with OroCRM
-====================================
+#DiamanteDesk Integration with OroCRM
 
-This bundle enables **DiamanteDesk** integration with OroCRM. It contains links to all required packages and will install them upon it's own installation.
+This bundle enables **DiamanteDesk** integration with OroCRM. It contains links to all packages required for the proper installation of the help desk.
 
-Installation
-============
+## Installation
 
-Install it as a composer dependency:
+###Installation via Marketplace
+
+Navigate to `System > Package Manager` to install it from OroCRM Marketplace.
+
+###Installation via Composer
+
+Install the integration bundle as a composer dependency:
 
 ```bash
-composer require diamante/orocrm-integration-bundle:dev-master 
+php composer.phar require diamante/orocrm-integration-bundle
 ```
 
-For correct installation you'll have to manually run following commands _(this list is a subject to change upon further development)_: 
+In order to install DiamanteDesk correctly, manually run the following commands _(this list may be changed upon further development)_: 
 
 ```bash
 php app/console diamante:desk:install
-php app/console diamante:user:install
-php app/console diamante:embeddedform:install
+php app/console diamante:user:schema
+php app/console diamante:embeddedform:schema
 php app/console assets:install
-php app/console assetic:dump
 ```
-
 Further installation steps:
-1. Set up mailer parameters in `parameters.yml` and `System > Configuration > DiamanteDesk > Channels`
-2. Enable notifications in `System > Configuration > DiamanteDesk > Notifications` 
+
+1. Set up mailer parameters in `parameters.yml` and at _System > Configuration > DiamanteDesk > Channels_.
+2. Enable notifications at _System > Configuration > DiamanteDesk > Notifications_. 
+
+## Contributing
+
+We appreciate any effort to make DiamanteDesk functionality better; therefore, we welcome all kinds of contributions in the form of bug reporting, patches submitting, feature requests or documentation enhancement. Please refer to the DiamanteDesk guidelines for contributing if you wish to be a part of the project.
