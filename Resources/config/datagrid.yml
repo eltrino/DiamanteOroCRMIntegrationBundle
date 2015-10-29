@@ -10,18 +10,18 @@ datagrid:
                     - i.status
                     - i.createdAt
                 from:
-                    - { table:  Diamante\UserBundle\Entity\DiamanteUser, alias: du }
+                    - { table:  Diamante\DeskBundle\Entity\Ticket, alias: i }
                 join:
                     left:
                         - { join: i.branch, alias: branch }
                         -
-                            join: Diamante\DeskBundle\Entity\Ticket
-                            alias: i
+                            join: Diamante\UserBundle\Entity\DiamanteUser
+                            alias: u
                             conditionType: WITH
-                            condition: "CONCAT('diamante_', du.id) = i.reporter"
+                            condition: "CONCAT('diamante_', u.id) = i.reporter"
                 where:
                     and:
-                      - du.email IN (:emails)
+                      - u.email IN (:emails)
                 groupBy: i.id
 
             bind_parameters:
