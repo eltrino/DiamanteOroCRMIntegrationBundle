@@ -2,6 +2,7 @@
 /**
 * @OroScript("Install script")
 **/
+use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -30,14 +31,8 @@ $application = new Application($kernel);
 $application->setAutoExit(false);
 
 $commands = array(
-    array('command' =>  'diamante:user:schema'),
-    array('command' =>  'diamante:desk:schema'),
-    array('command' =>  'diamante:embeddedform:schema'),
-    array('command' =>  'oro:migration:load', '--force' => true),
+    array('command' =>  'oro:platform:update', '--force' => true),
     array('command' =>  'diamante:desk:data'),
-    array('command' =>  'oro:navigation:init'),
-    array('command' =>  'oro:entity-config:update'),
-    array('command' =>  'assets:install')
 );
 
 foreach($commands as $command) {
