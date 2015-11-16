@@ -10,24 +10,7 @@ Navigate to `System > Package Manager` to install it from OroCRM Marketplace.
 
 ###Installation via Composer
 
-Install the integration bundle as a composer dependency:
-
-```bash
-php composer.phar require diamante/orocrm-integration-bundle
-```
-
-In order to install DiamanteDesk correctly, manually run the following commands _(this list may be changed upon further development)_: 
-
-```bash
-php app/console diamante:desk:install
-php app/console diamante:user:schema
-php app/console diamante:embeddedform:schema
-php app/console assets:install
-```
-Further installation steps:
-
-1. Set up mailer parameters in `parameters.yml` and at _System > Configuration > DiamanteDesk > Channels_.
-2. Enable notifications at _System > Configuration > DiamanteDesk > Notifications_. 
+As of 1.1 release we do not support composer installation. OroCRM integration package should only be installed via Oro Marketplace.
 
 ## Contributing
 
