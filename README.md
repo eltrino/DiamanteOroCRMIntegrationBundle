@@ -6,7 +6,7 @@ This bundle enables **DiamanteDesk** integration with OroCRM. It contains links 
 
 ###Installation via Marketplace
 
-Navigate to `System > Package Manager` to install it from OroCRM Marketplace.
+Navigate to `System > Package Manager` to install it from the OroCRM Marketplace. For the detailed instruction on how to add an extension to your OroCRM instance, follow this [link](http://www.orocrm.com/documentation/index/current/user-guide/package-manager).
 
 ###Installation via Composer
 
