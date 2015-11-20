@@ -164,6 +164,9 @@ class OnFlushListener implements EventSubscriber
     private function getDefaultUser()
     {
         $defaultUser = $this->container->get('oro_config.global')->get('diamante_oro_crm_integration.default_owner');
+        if (!$defaultUser) {
+            throw new \LogicException('Unable to find default owner for contact');
+        }
         $userRepository = $this->container->get('doctrine')->getManager()->getRepository($this->oroUserEntityClassName);
         return $userRepository->find($defaultUser->getId());
     }

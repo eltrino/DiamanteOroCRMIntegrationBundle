@@ -15,15 +15,19 @@ define([
     'jquery'
 ], function ($) {
     'use strict';
-    var switcher = $('#diamante_desk_channels_diamante_oro_crm_integration___create_contact_value');
+    var switcher = $("[data-ftid*='diamante_desk_channels_diamante_oro_crm_integration___create_contact_value']");
     var targetContainer = $("[id*='diamante_desk_channels_diamante_oro_crm_integration___default_owner'].control-subgroup");
+    var rowContainer = $("[id*='diamante_desk_channels_diamante_oro_crm_integration___default_owner'].control-subgroup").parents('.control-group');
 
     $(switcher).change(function () {
         var val = !parseInt($(this).val());
+        $(targetContainer).find('input,button').prop('disabled', val).blur();
         if (val) {
             $(targetContainer).find('.select2-search-choice-close').mousedown();
+            $(rowContainer).hide();
+        } else {
+            $(rowContainer).show();
         }
-        $(targetContainer).find('input,button').prop('disabled', val);
         $(this).focus();
     });
 
@@ -32,6 +36,9 @@ define([
         $(targetContainer).find('input,button').prop('disabled', val).blur();
         if (val) {
             $(targetContainer).find('.select2-search-choice-close').mousedown();
+            $(rowContainer).hide();
+        } else {
+            $(rowContainer).show();
         }
     });
 
