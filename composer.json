@@ -17,12 +17,8 @@
   "target-dir": "Diamante/OroCRMIntegrationBundle",
   "repositories": [
     {
-      "type": "git",
-      "url": "https://github.com/eltrino/OroCRMIntegrationBundle.git"
-    },
-    {
-      "type": "git",
-      "url": "https://github.com/orocrm/composer.git"
+      "type": "composer",
+      "url": "http://packagist.orocrm.com"
     }
   ],
   "require": {
