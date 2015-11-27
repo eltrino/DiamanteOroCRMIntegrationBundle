@@ -7,23 +7,23 @@ oro_menu_config:
                 position: 100
 
         diamante_branch_list:
-            label: 'Branches'
+            label: 'diamante.desk.branch.entity_plural_label'
             route: diamante_branch_list
             extras:
                 routes: ['diamante_branch_*']
         diamante_ticket_list:
-            label: 'All Tickets'
+            label: 'diamante.desk.ticket.entity_plural_label'
             route: diamante_ticket_list
             extras:
                 routes: ['diamante_ticket_*', 'diamante_comment_*']
 
         #reports
         diamante_report_list:
-            label: 'Reports'
+            label: 'diamante.desk.report.plural_label'
             uri: '#'
 
         diamante_report_tickets_by_priority:
-            label: 'Tickets By priority'
+            label: 'diamante.desk.report.reports.tickets_by_priority'
             route: diamante_report_view
             routeParameters:
                 id: 'tickets_by_priority'
@@ -31,7 +31,7 @@ oro_menu_config:
                 routes: ['diamante_report_*']
 
         diamante_report_time_of_response:
-            label: 'Time Of Response'
+            label: 'diamante.desk.report.reports.tickets_by_response_time'
             route: diamante_report_view
             routeParameters:
                 id: 'time_of_response'
@@ -39,33 +39,33 @@ oro_menu_config:
                 routes: ['diamante_report_*']
 
         diamante_report_tickets_by_channels:
-            label: 'Tickets by Channels'
+            label: 'diamante.desk.report.reports.tickets_by_channels'
             route: diamante_report_view
             routeParameters:
                 id: 'tickets_by_channels'
             extras:
                 routes: ['diamante_report_*']
 
-        diamante_report_tickets_by_branch:
-            label: 'Tickets by Branch'
+        diamante_report_tickets_by_branches:
+            label:  'diamante.desk.report.reports.tickets_by_branches'
             route: diamante_report_view
             routeParameters:
-                id: 'tickets_by_branch'
+                id: 'tickets_by_branches'
             extras:
                 routes: ['diamante_report_*']
 
         diamante_report_tickets_timeline:
-            label: 'Tickets TimeLine'
+            label:  'diamante.desk.report.reports.ticket_timeline'
             route: diamante_report_view
             routeParameters:
-                id: 'tickets_timeline'
+                id: 'ticket_timeline'
             extras:
                 routes: ['diamante_report_*']
 
         diamante_customer_management:
-              label: 'diamante.user.customer_management'
-              route: 'diamante_user_list'
-              extras:
+            label: 'diamante.user.labels.entity.plural'
+            route: 'diamante_user_list'
+            extras:
                 position: 60
 
     tree:
