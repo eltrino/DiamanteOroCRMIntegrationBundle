@@ -1,7 +1,7 @@
 {
   "name": "diamante/orocrm-integration-bundle",
   "description": "DiamanteDesk OroCRM Integration Bundle",
-  "homepage": "https://github.com/eltrino/OroCRMIntegrationBundle",
+  "homepage": "https://github.com/eltrino/DiamanteOroCRMIntegrationBundle",
   "license": "OSL-3.0",
   "authors": [
     {
