@@ -47,14 +47,14 @@ oro_menu_config:
                 routes: ['diamante_report_*']
 
         diamante_report_tickets_by_branches:
-            label:  'diamante.desk.report.reports.tickets_by_branches'
+            label: 'diamante.desk.report.reports.tickets_by_branches'
             route: diamante_report_view
             routeParameters:
                 id: 'tickets_by_branches'
             extras:
                 routes: ['diamante_report_*']
 
-        diamante_report_tickets_timeline:
+        diamante_report_ticket_timeline:
             label:  'diamante.desk.report.reports.ticket_timeline'
             route: diamante_report_view
             routeParameters:
