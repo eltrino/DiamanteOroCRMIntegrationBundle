@@ -81,8 +81,8 @@ oro_menu_config:
                                 diamante_report_tickets_by_priority: ~
                                 diamante_report_time_of_response: ~
                                 diamante_report_tickets_by_channels: ~
-                                diamante_report_tickets_by_branch: ~
-                                diamante_report_tickets_timeline: ~
+                                diamante_report_tickets_by_branches: ~
+                                diamante_report_ticket_timeline: ~
 
 oro_titles:
     diamante_branch_list: ~
