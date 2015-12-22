@@ -27,8 +27,8 @@ class DefaultOwnerType extends UserSelectType
             [
                 'configs'            => [
                     'placeholder'             => self::EMPTY_LABEL,
-                    'result_template_twig'    => 'OroUserBundle:User:Autocomplete/result.html.twig',
-                    'selection_template_twig' => 'OroUserBundle:User:Autocomplete/selection.html.twig'
+                    'result_template_twig'    => 'DiamanteOroCRMIntegrationBundle:Form:Autocomplete/result.html.twig',
+                    'selection_template_twig' => 'DiamanteOroCRMIntegrationBundle:Form:Autocomplete/selection.html.twig'
                 ],
                 'autocomplete_alias' => 'users'
             ]

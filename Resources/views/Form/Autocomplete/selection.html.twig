@@ -1,0 +1,10 @@
+{% set fullName = get_user_full_name(value) %}
+<img src="<% if (avatar) { %><%= avatar %><% } else { %>{{ asset('bundles/oroui/img/avatar-xsmall.png')|e('html_attr')|raw }}<% } %>" width="16" height="16" />&nbsp;<span class="current-name" style="display: inline-block; line-height: 16px; vertical-align: middle;"><%= _.escape(fullName) %></span>
+<script>
+    var fullName = '{{ fullName }}';
+    var curName = $('.current-name');
+    var html = curName.html();
+    if (html == '') {
+        curName.html(fullName)
+    }
+</script>

@@ -10,6 +10,7 @@
         <parameter key="diamante.integration.event_listener.on_flush.class">Diamante\OroCRMIntegrationBundle\EventListener\OnFlushListener</parameter>
         <parameter key="diamante_integration_default_owner.type.class">Diamante\OroCRMIntegrationBundle\Form\Type\DefaultOwnerType</parameter>
         <parameter key="diamante_integration_depended_choice.type.class">Diamante\OroCRMIntegrationBundle\Form\Type\DependedChoiceType</parameter>
+        <parameter key="diamante.integration.config.owner.twig.extension.class">Diamante\OroCRMIntegrationBundle\Twig\Extensions\OwnerDetailsExtension</parameter>
     </parameters>
 
     <services>
@@ -27,6 +28,11 @@
 
         <service id="diamante_integration_depended_choice" class="%diamante_integration_depended_choice.type.class%">
             <tag name="form.type" alias="dependent_choice_type"/>
+        </service>
+
+        <service id="diamante.integration.config.owner.twig.extension" class="%diamante.integration.config.owner.twig.extension.class%">
+            <argument type="service" id="doctrine"/>
+            <tag name="twig.extension"/>
         </service>
 
     </services>
