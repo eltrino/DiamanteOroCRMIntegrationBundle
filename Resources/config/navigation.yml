@@ -19,7 +19,7 @@ oro_menu_config:
 
         #reports
         diamante_report_list:
-            label: 'diamante.desk.report.plural_label'
+            label: 'Desk'
             uri: '#'
 
         diamante_report_tickets_by_priority:
@@ -76,6 +76,8 @@ oro_menu_config:
                         diamante_branch_list: ~
                         diamante_ticket_list: ~
                         diamante_customer_management: ~
+                reports_tab:
+                    children:
                         diamante_report_list:
                             children:
                                 diamante_report_tickets_by_priority: ~
