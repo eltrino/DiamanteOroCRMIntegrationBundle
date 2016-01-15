@@ -45,8 +45,7 @@ $yamlParser = new Yaml();
 $yamlArray = $yamlParser->parse(file_get_contents($rootDir . '/config/security.yml'));
 
 if (isset($yamlArray['security'])) {
-    $yamlArray['security']['firewalls'] = array_merge($yamlArray['security']['firewalls'],
-        array(
+    $yamlArray['security']['firewalls'] = array_merge(array(
             //DiamanteDeskBundle
             'diamante_attachments_download' => array(
                 'pattern' => '^/desk/attachments/download/*',
@@ -77,7 +76,7 @@ if (isset($yamlArray['security'])) {
                 'stateless' => true,
                 'wsse_diamante_api' => true,
             )
-        )
+        ), $yamlArray['security']['firewalls']
     );
     $yamlArray['security']['providers'] = array_merge($yamlArray['security']['providers'], array(
         //DiamanteApiBundle
