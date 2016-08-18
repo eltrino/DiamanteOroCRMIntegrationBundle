@@ -16,6 +16,25 @@ oro_menu_config:
             route: diamante_ticket_list
             extras:
                 routes: ['diamante_ticket_*', 'diamante_comment_*']
+        diamante_automation_list:
+            label: 'diamante.automation.rule.entity_plural_label'
+            uri: '#'
+
+        diamante_event_triggered_list:
+            label: 'diamante.automation.rule.event_triggered.entity_label'
+            route: diamante_event_triggered_list
+            routeParameters:
+                type: 'event_triggered'
+            extras:
+                routes: ['diamante_event_triggered_*']
+
+        diamante_time_triggered_list:
+            label: 'diamante.automation.rule.time_triggered.entity_label'
+            route: diamante_time_triggered_list
+            routeParameters:
+                type: 'time_triggered'
+            extras:
+                routes: ['diamante_time_triggered_*']
 
         #reports
         diamante_report_list:
@@ -76,6 +95,10 @@ oro_menu_config:
                         diamante_branch_list: ~
                         diamante_ticket_list: ~
                         diamante_customer_management: ~
+                        diamante_automation_list:
+                            children:
+                                diamante_time_triggered_list: ~
+                                diamante_event_triggered_list: ~
                 reports_tab:
                     children:
                         diamante_report_list:
