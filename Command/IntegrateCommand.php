@@ -36,11 +36,8 @@ class IntegrateCommand extends ContainerAwareCommand
         $executor = $this->getCommandExecutor($input, $output);
 
         $executor->runCommand('cache:clear');
-        $executor->runCommand('diamante:user:schema');
-        $executor->runCommand('diamante:desk:schema');
         $executor->runCommand('oro:migration:load', [
             '--force'             => true,
-            '--bundles'           => 'DiamanteDeskBundle',
             '--process-isolation' => true,
         ]);
 
