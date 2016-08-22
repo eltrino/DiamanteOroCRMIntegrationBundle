@@ -44,7 +44,6 @@ class IntegrateCommand extends ContainerAwareCommand
                 'DiamanteEmbeddedFormBundle',
                 'DiamanteAutomationBundle'
             ],
-            '--process-isolation' => true,
         ]);
         $executor->runCommand('oro:migration:data:load');
         $executor->runCommand('diamante:desk:data');
