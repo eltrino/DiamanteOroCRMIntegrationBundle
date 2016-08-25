@@ -19,7 +19,7 @@ use Oro\Bundle\PlatformBundle\Composer\LocalRepositoryFactory;
 /**
  * Class Version
  *
- * @package Diamante\DistributionBundle\Infrastructure
+ * @package Diamante\OroCRMIntegrationBundle\Infrastructure
  */
 class Version
 {
